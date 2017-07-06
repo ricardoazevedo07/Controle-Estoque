@@ -1,0 +1,31 @@
+# depslib dependency file v1.0
+1499265071 source:d:\users\sonia\documents\downloads\final ed1\estoque\arvorelista.c
+	"DATA.h"
+	"MENU.h"
+	<stdio.h>
+
+1499265071 d:\users\sonia\documents\downloads\final ed1\estoque\data.h
+	<stdio.h>
+	<stdlib.h>
+
+1499265297 d:\users\sonia\documents\downloads\final ed1\estoque\menu.h
+	<stdlib.h>
+	<stdio.h>
+	<string.h>
+	"DATA.h"
+
+1499302343 source:d:\users\sonia\documents\downloads\final ed1\back\main.c
+	<stdlib.h>
+	<stdio.h>
+	<string.h>
+	"ArvoreLista.h"
+
+1499268311 d:\users\sonia\documents\downloads\final ed1\back\menu.h
+	"ArvoreLista.h"
+	<stdio.h>
+	<stdlib.h>
+
+1499268200 d:\users\sonia\documents\downloads\final ed1\back\arvorelista.h
+	<stdio.h>
+	<stdlib.h>
+
