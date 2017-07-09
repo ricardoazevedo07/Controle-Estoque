@@ -2,6 +2,8 @@
 
 #include <stdio.h>
 #include <stdlib.h>
+#include <string.h>
+
 
 
 struct lista{
@@ -30,23 +32,40 @@ struct lista *prox;
 };
 typedef struct lista LISTA;
 
-
-LISTA *CRIA_LISTA(){
+LISTA* CRIA_LISTA(void){
 return NULL;
 }
 
-LISTA *INSERE(LISTA **L, int prod){
+
+LISTA *INSERE(LISTA **L, LISTA P){
 
 LISTA *NOVA = (LISTA*) malloc(sizeof(LISTA));
 
-NOVA->info = prod;
+NOVA->validadeDia = P.validadeDia;
+NOVA->validadeAno = P.validadeAno;
+NOVA->validadeMes = P.validadeMes;
+
+NOVA->chegadaAno = P.chegadaAno;
+NOVA->chegadaMes = P.chegadaMes;
+NOVA->chegadaDia = P.chegadaDia;
+
+NOVA->quantidade = P.quantidade;
+NOVA->preco = P.preco;
+
+strcmp(NOVA->subcategoria,P.subcategoria);
+strcmp(NOVA->nome,P.nome);
+strcmp(NOVA->localizacao,P.localizacao);
+strcmp(NOVA->tipoDemanda, P.tipoDemanda);
+strcmp(NOVA->fornecedor, P.fornecedor);
+
+
 NOVA->prox = *L;
 *L = NOVA;
 
 }
 
 int VAZIA(LISTA *L){
-if(L=NULL){
+if(L==NULL){
 return 1;
  } else {
 return 0;
@@ -71,12 +90,28 @@ return NULL;
 
 
 
-int imprime_lista(LISTA *L){
-LISTA *AUX, *ANT;
-AUX = L;
+int IMPRIME_LISTA(LISTA *L){
 
-for(AUX=L; AUX !=NULL;ANT=AUX, AUX = L=L->prox){
-printf("%i\n", AUX->info);
+
+if(VAZIA(L)==1){
+    printf("\n A LISTA SOLICITADA ESTA VAZIA\n");
+    return 0;
+} else{
+    //ponha as quebras de linha
+printf("%s  NOME", L->nome);
+printf("%s  SUBCATEGORIA", L->subcategoria);
+printf("%s  LOCALIZACAO", L->localizacao);
+printf("%s  TIPO DE DEMANDA", L->tipoDemanda);
+printf("%s  FORNECEDOR", L->fornecedor);
+printf("Dados de Chegada");
+printf("DIA %d", L->chegadaDia);
+printf("MES %d", L->chegadaMes);
+printf("ANO %d", L->chegadaAno);
+printf("Dados de Validade do Produto");
+printf("DIA %d", L->validadeDia);
+printf("MES %d", L->validadeMes);
+printf("ANO %d", L->validadeAno);
+IMPRIME_LISTA(L->prox);
 }
 
 }
@@ -175,8 +210,4 @@ if(!vazia(A)){
 
 }
 }
-
-
-
-
 

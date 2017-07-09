@@ -29,3 +29,19 @@
 	<stdio.h>
 	<stdlib.h>
 
+1499574568 source:d:\users\sonia\documents\ed1\estoque-v1\main.c
+	<stdlib.h>
+	<stdio.h>
+	<string.h>
+	"MENU.h"
+
+1499578069 d:\users\sonia\documents\ed1\estoque-v1\menu.h
+	<stdio.h>
+	<stdlib.h>
+	"ArvoreLista.h"
+
+1499578432 d:\users\sonia\documents\ed1\estoque-v1\arvorelista.h
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+
