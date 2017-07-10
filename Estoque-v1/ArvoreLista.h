@@ -1,6 +1,4 @@
-
-
-#include <stdio.h>
+      #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
 
@@ -37,7 +35,7 @@ return NULL;
 }
 
 
-LISTA *INSERE(LISTA **L, LISTA P){
+LISTA *INSERE(LISTA *L, LISTA P){
 
 LISTA *NOVA = (LISTA*) malloc(sizeof(LISTA));
 
@@ -59,8 +57,8 @@ strcmp(NOVA->tipoDemanda, P.tipoDemanda);
 strcmp(NOVA->fornecedor, P.fornecedor);
 
 
-NOVA->prox = *L;
-*L = NOVA;
+NOVA->prox = L;
+ return NOVA;
 
 }
 
@@ -90,31 +88,39 @@ return NULL;
 
 
 
+
 int IMPRIME_LISTA(LISTA *L){
-
-
-if(VAZIA(L)==1){
-    printf("\n A LISTA SOLICITADA ESTA VAZIA\n");
-    return 0;
-} else{
+LISTA *AUX;
+AUX=L;
+if(AUX==NULL){
+    printf("LISTA VAZIA");
+    return;
+}else{
+   while(AUX!=NULL){
     //ponha as quebras de linha
-printf("%s  NOME", L->nome);
-printf("%s  SUBCATEGORIA", L->subcategoria);
-printf("%s  LOCALIZACAO", L->localizacao);
-printf("%s  TIPO DE DEMANDA", L->tipoDemanda);
-printf("%s  FORNECEDOR", L->fornecedor);
-printf("Dados de Chegada");
-printf("DIA %d", L->chegadaDia);
-printf("MES %d", L->chegadaMes);
-printf("ANO %d", L->chegadaAno);
-printf("Dados de Validade do Produto");
-printf("DIA %d", L->validadeDia);
-printf("MES %d", L->validadeMes);
-printf("ANO %d", L->validadeAno);
-IMPRIME_LISTA(L->prox);
+printf("\n\n  NOME %s\n\n", AUX->nome);
+printf("\n\n SUBCATEGORIA %s \n\n", AUX->subcategoria);
+printf("\n\n%s  LOCALIZACAO\n\n", AUX->localizacao);
+printf("\n\n%s  TIPO DE DEMANDA\n\n", AUX->tipoDemanda);
+printf("\n\n%s  FORNECEDOR\n\n", AUX->fornecedor);
+printf("\n\nDados de Chegada\n\n");
+printf("\n\nDIA %d\n\n", AUX->chegadaDia);
+printf("\n\nMES %d\n\n", AUX->chegadaMes);
+printf("\n\nANO %d\n\n", AUX->chegadaAno);
+printf("\n\nDados de Validade do Produto\n\n");
+printf("\n\nDIA %d\n\n", AUX->validadeDia);
+printf("\n\nMES %d\n\n", AUX->validadeMes);
+printf("\n\nANO %d\n\n", AUX->validadeAno);
+
+
+    AUX= AUX->prox;
+   }
+
+     }
 }
 
-}
+
+
 
 int REMOVE(LISTA *L, int b){
   LISTA *BUSCADOR, *AUX, *ANTE;
