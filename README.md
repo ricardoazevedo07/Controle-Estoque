@@ -5,28 +5,21 @@
 
 Sistema de Controle de Estoque em C utilizando estrutura de dados para inserir, consultar, remover e listar
 
-Simulação de um estoque de Mercado com insersão de:
+Simulação de um estoque de Mercado com inserção de:
 
 Categoria;
 
 Subcategoria;
-
 Id;
-
 Nome;
-
-Tipo;  
+Tipo;   
 
 
 Funcoes#
 
 
 Inserir      ()
-
 Remover      ()
-
 Consultar    ()
-
 consultar ID ()
-
 Categoria    ()
